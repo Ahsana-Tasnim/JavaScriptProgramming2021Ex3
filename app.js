@@ -30,5 +30,19 @@ console.log(`${now.toDateString()} ${now.toTimeString()}`);
 
 console.group('~~~~~~~~~~~~~');
 console.log('EXERCISE 3');
-let birthDate = new Date(2000, 4, 19, 18, 25);
+let birthDate = new Date(2000, 3, 19, 18, 25);
 console.log(birthDate);
+
+console.log(`What is the date 1 billion seconds from my birthday and how old
+am I or will be that year?`);
+let seconds = 1000000000;
+let days = Math.floor(seconds / 86400);
+console.log(days);
+
+
+let nextDate = new Date();
+nextDate.setDate(birthDate + days);
+console.log(nextDate);
+// let newDate = new Date(birthDate);
+// newDate.setDate(nextDate);
+// console.log(newDate);
