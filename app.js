@@ -37,12 +37,37 @@ console.log(`What is the date 1 billion seconds from my birthday and how old
 am I or will be that year?`);
 let seconds = 1000000000;
 let days = Math.floor(seconds / 86400);
-console.log(days);
 
 
-let nextDate = new Date();
-nextDate.setDate(birthDate + days);
+let nextDate = birthDate.getDay() + days;
 console.log(nextDate);
-// let newDate = new Date(birthDate);
-// newDate.setDate(nextDate);
-// console.log(newDate);
+
+
+let newDate = new Date(birthDate.getFullYear(), birthDate.getMonth(), birthDate.getDay());
+newDate.setDate(nextDate);
+console.log(newDate);
+
+
+let age = newDate.getFullYear() - birthDate.getFullYear();
+console.log(`My age of year ${newDate.getFullYear()} will be ${age}.`);
+
+
+console.group(`~~~~~~~~~~~~~~~~~~~`);
+
+console.log(`What is the date 1 billion milliseconds from my birthday and how old
+am I or will be that year?`);
+let miliseconds = 1000000000;
+daysForMiliseconds = Math.floor(miliseconds / 86400000);
+console.log(daysForMiliseconds);
+
+let nextDateForMiliseconds = birthDate.getDay() + daysForMiliseconds;
+console.log(nextDateForMiliseconds);
+
+
+let newDateForMiliseconds = new Date(birthDate.getFullYear(), birthDate.getMonth(), birthDate.getDay());
+newDateForMiliseconds.setDate(nextDateForMiliseconds);
+console.log(newDateForMiliseconds);
+
+
+let newAge = newDateForMiliseconds.getDay() - birthDate.getDay();
+ console.log(`My age of year ${newDateForMiliseconds.getFullYear()} was ${newAge}.`);
